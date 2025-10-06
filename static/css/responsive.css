@@ -1,0 +1,280 @@
+@media (min-width: 1200px) {
+  :root {
+    --size: 48px;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .topic-content {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .topics-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    padding: 0 12px;
+  }
+  
+  .topic-card {
+    height: 180px;
+    padding: 18px;
+  }
+  
+  .topic-content {
+    padding: 0 15px;
+    max-width: 95%;
+  }
+  
+  .topic-header {
+    margin-bottom: 20px;
+  }
+  
+  .topic-header h1 {
+    font-size: 26px;
+  }
+  
+  .topic-header .topic-number {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .content-block {
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .content-block h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --size: 40px;
+  }
+
+  header {
+      padding: 12px 15px;
+  }
+  
+  .header-container {
+      flex-wrap: wrap;
+  }
+  
+  .logo {
+      font-size: 18px;
+  }
+
+  .nav-toggle {
+      display: flex;
+  }
+
+  nav {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+  }
+  
+  nav.active {
+      max-height: 300px;
+  }
+  
+  nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding-top: 15px;
+  }
+  
+  nav ul li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav ul li:last-child {
+      border-bottom: none;
+  }
+  
+  nav ul li a {
+      padding: 15px 10px;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 0;
+  }
+  
+  nav ul li a:hover {
+      background-color: var(--dark-red);
+  }
+  
+  .navigation-links {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  
+  .topic-card {
+    height: auto;
+    min-height: 140px;
+    padding: 15px;
+    margin: 0 5px;
+  }
+  
+  .topic-number {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 14px !important;
+    left: 15px;
+  }
+  
+  .topic-card h3 {
+    font-size: 1.1em;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  
+  .topic-content {
+    padding: 0 10px;
+  }
+  
+  .topic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .topic-header .topic-number {
+    margin-right: 0;
+    width: 50px !important;
+    height: 50px !important;
+    align-self: center;
+  }
+  
+  .topic-header h1 {
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .content-block {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 2px solid var(--light-red);
+    border-right: 2px solid var(--light-red);
+  }
+  
+  .content-block h2 {
+    font-size: 20px;
+  }
+  
+  .content-block p {
+    text-indent: 10px;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  
+  .content-block ul {
+    margin-left: 15px;
+  }
+  
+  .content-block img {
+    margin: 8px auto 20px auto;
+    border-radius: 8px;
+  }
+  
+  .content-block img:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 10px 12px;
+  }
+  
+  .logo {
+      font-size: 16px;
+  }
+  
+  nav ul li a {
+      padding: 12px 10px;
+      font-size: 15px;
+  }
+
+  .topics-grid {
+    padding: 0 8px;
+    gap: 12px;
+  }
+  
+  .topic-card {
+    padding: 12px;
+    min-height: 120px;
+  }
+  
+  .topic-number {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
+    left: 12px;
+    top: -12px;
+  }
+  
+  .topic-card h3 {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  .topic-content {
+    padding: 0 8px;
+  }
+  
+  .topic-header {
+    gap: 12px;
+  }
+  
+  .topic-header h1 {
+    font-size: 20px;
+  }
+  
+  .topic-header .topic-number {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .content-block {
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .content-block h2 {
+    font-size: 18px;
+  }
+  
+  .content-block p {
+    text-indent: 8px;
+    font-size: 0.9em;
+  }
+}
