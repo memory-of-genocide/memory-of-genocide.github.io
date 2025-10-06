@@ -342,55 +342,18 @@ em {
 .nav-link:hover {
   background-color: var(--dark-red);
 }
-/* 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
 
-.card {
-  background-color: var(--white);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid var(--primary-red);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-  color: var(--primary-red);
-  margin-bottom: 8px;
-} */
-
-.search-container {
-  margin-bottom: 25px;
-}
-
-#searchInput {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid var(--light-gray);
-  border-radius: 6px;
-  font-size: 17px;
-}
-
-.materials-categories {
+.archive-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
 }
 
-.category {
+.archive-category {
   margin-bottom: 20px;
 }
 
-.category h2 {
+.archive-category h2 {
   font-size: 21px;
   color: var(--primary-red);
   margin-bottom: 15px;
@@ -398,11 +361,11 @@ em {
   border-bottom: 1px solid var(--light-gray);
 }
 
-.materials-list {
+.archive-list {
   list-style-type: none;
 }
 
-.materials-list li {
+.archive-list li {
   padding: 15px;
   margin-bottom: 15px;
   background-color: var(--light-gray);
@@ -412,112 +375,216 @@ em {
   color: #2c3e50;
 }
 
-.materials-list li:hover {
+.archive-list li:hover {
   background-color: var(--light-red);
   color: var(--white);
 }
 
-.materials-list a {
+.archive-list a {
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-/* .dictionary main {
+.archive-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    color: #E53E3E;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.cards-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1600px;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.dictionary .card {
-    background: linear-gradient(135deg, #ef233c 0%, #d90429 100%);
-    border: 2px solid #2b2d42;
+.dictionary-card {
+    background-color: #FFF5F5;
+    border-left: 4px solid #E53E3E;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     margin: 0;
-    padding: 30px 25px;
-    width: calc(33.333% - 40px);
-    min-width: 300px;
-    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.15);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.dictionary .card::before {
+.dictionary-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #edf2f4, #8d99ae);
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 62, 62, 0.05);
+    border-radius: 0 0 0 80px;
+    transition: all 0.3s ease;
 }
 
-.dictionary .card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    border-color: #edf2f4;
+.dictionary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(229, 62, 62, 0.25);
 }
 
-.dictionary .card h2 {
-    color: #edf2f4;
-    font-size: 22px;
-    margin: 0 0 15px 0;
+.dictionary-card:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.dictionary-card h3 {
+    color: #E53E3E;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.dictionary-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: #E53E3E;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.dictionary-card:hover h3::after {
+    width: 60px;
+}
+
+.dictionary-card .phonetic {
+    color: #1A202C;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.dictionary-card .definition {
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.dictionary-card hr {
+    border: none;
+    border-top: 1px solid #FED7D7;
+    margin: 25px 0;
+}
+
+.dictionary-card .example {
+    color: #1A202C;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border-left: 3px solid #FED7D7;
+    transition: all 0.3s ease;
+}
+
+.dictionary-card:hover .example {
+    background: rgba(255, 255, 255, 0.9);
+    border-left-color: #E53E3E;
+}
+
+.dictionary-card .example b {
+    color: #E53E3E;
     font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.dictionary .card p {
-    font-size: 18px;
-    color: #edf2f4;
-    line-height: 1.5;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #888;
 }
 
-.dictionary .card sup {
-    user-select: none;
-    color: #edf2f4;
-    font-size: 14px;
-    opacity: 0.9;
+.category {
+    background: #E53E3E;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
-
-@media (max-width: 1200px) {
-    .dictionary .card {
-        width: calc(50% - 30px);
-        min-width: 280px;
-    }
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+  padding: 0 15px;
 }
 
-@media (max-width: 768px) {
-    .dictionary .card {
-        width: 100%;
-        max-width: 500px;
-        min-width: auto;
-    }
-    
-    .dictionary main {
-        gap: 15px;
-        padding: 15px;
-    }
+.quiz-card {
+  display: block;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  border-top: 4px solid var(--primary-red);
+  border-top: 4px solid var(--primary-red);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  height: 100px;
 }
 
-@media (max-width: 480px) {
-    .dictionary .card {
-        padding: 20px 15px;
-    }
-    
-    .dictionary .card h2 {
-        font-size: 20px;
-    }
-    
-    .dictionary .card p {
-        font-size: 16px;
-    }
-} */
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: var(--primary-red);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: var(--size);
+  height: var(--size);
+  aspect-ratio: 1 / 1;
+  font-size: 20px;
+}
