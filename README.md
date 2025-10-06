@@ -1,6 +1,6 @@
 # 🕯️ Memory Of Genocide
 
-[![Сайт проекта](https://img.shields.io/badge/🌐_Посетить_сайт--?style=for-the-badge&color=black)]()
+[![Сайт проекта](https://img.shields.io/badge/🌐_Посетить_сайт--?style=for-the-badge&color=black)](https://memory-of-genocide.github.io/)
 [![Лицензия](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 > Мемориальный веб-сайт, посвященный сохранению памяти о жертвах геноцида.
