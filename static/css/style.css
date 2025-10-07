@@ -565,7 +565,7 @@ em {
   border-top: 4px solid var(--primary-red);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
-  height: 100px;
+  height: 150px;
 }
 
 .quiz-card:hover {
