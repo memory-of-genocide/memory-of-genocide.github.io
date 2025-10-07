@@ -9,6 +9,21 @@
   <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
   <link rel="stylesheet" type="text/css" href="../../static/css/responsive.css">
   <script defer type="text/javascript" src="../../static/js/burger-menu.js"></script>
+  <style>
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../static/img/bg_dictionary.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -1;
+    }
+  </style>
 </head>
 
 <body>
@@ -38,75 +53,77 @@
   </header>
 
   <main>
-    <div class="container">
-      <div class="header">
-        <h1>Словарь</h1>
-        <p>Термины, связанные с геноцидом белорусского народа в годы</p>
-        <p>Великой Отечественной войны</p>
-      </div>
-      
-      <div class="cards-container" id="cardsContainer">
-        <div class="dictionary-card">
-          <h3>ГЕНОЦИД</h3>
-          <p class="phonetic">[гэнацѝд] — <i>существительное, мужской род</i></p>
-          <p class="definition">Преднамеренное истребление отдельных групп населения или народов по расовым, национальным, этническим или религиозным мотивам.</p>
-          <hr>
-          <p class="example"><b>Пример:</b> Геноцид белорусского народа является одним из самых страшных преступлений нацизма в годы Великой Отечественной войны.</p>
-          <div class="card-footer">
-            <span>Исторический термин</span>
-            <span class="category">Военная история</span>
-          </div>
+    <section>
+      <div class="container">
+        <div class="header">
+          <h1>Словарь</h1>
+          <p>Термины, связанные с геноцидом белорусского народа в годы</p>
+          <p>Великой Отечественной войны</p>
         </div>
         
-        <div class="dictionary-card">
-          <h3>ХОЛОКОСТ</h3>
-          <p class="phonetic">[холокост] — <i>существительное, мужской род</i></p>
-          <p class="definition">Систематическое преследование и уничтожение еврейского народа нацистской Германией и коллаборационистами в 1933-1945 годах.</p>
-          <hr>
-          <p class="example"><b>Пример:</b> Холокост на территории Беларуси унёс жизни более 800 тысяч евреев.</p>
-          <div class="card-footer">
-            <span>Исторический термин</span>
-            <span class="category">Военная история</span>
+        <div class="cards-container" id="cardsContainer">
+          <div class="dictionary-card">
+            <h3>ГЕНОЦИД</h3>
+            <p class="phonetic">[гэнацѝд] — <i>существительное, мужской род</i></p>
+            <p class="definition">Преднамеренное истребление отдельных групп населения или народов по расовым, национальным, этническим или религиозным мотивам.</p>
+            <hr>
+            <p class="example"><b>Пример:</b> Геноцид белорусского народа является одним из самых страшных преступлений нацизма в годы Великой Отечественной войны.</p>
+            <div class="card-footer">
+              <span>Исторический термин</span>
+              <span class="category">Военная история</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="dictionary-card">
-          <h3>ОККУПАЦИЯ</h3>
-          <p class="phonetic">[оккупа́ция] — <i>существительное, женский род</i></p>
-          <p class="definition">Временное занятие вооружёнными силами государства территории другого государства с установлением собственного управления.</p>
-          <hr>
-          <p class="example"><b>Пример:</b> Нацистская оккупация Беларуси продолжалась с 1941 по 1944 год и принесла неисчислимые страдания мирному населению.</p>
-          <div class="card-footer">
-            <span>Исторический термин</span>
-            <span class="category">Военная история</span>
+          
+          <div class="dictionary-card">
+            <h3>ХОЛОКОСТ</h3>
+            <p class="phonetic">[холокост] — <i>существительное, мужской род</i></p>
+            <p class="definition">Систематическое преследование и уничтожение еврейского народа нацистской Германией и коллаборационистами в 1933-1945 годах.</p>
+            <hr>
+            <p class="example"><b>Пример:</b> Холокост на территории Беларуси унёс жизни более 800 тысяч евреев.</p>
+            <div class="card-footer">
+              <span>Исторический термин</span>
+              <span class="category">Военная история</span>
+            </div>
           </div>
-        </div>
+          
+          <div class="dictionary-card">
+            <h3>ОККУПАЦИЯ</h3>
+            <p class="phonetic">[оккупа́ция] — <i>существительное, женский род</i></p>
+            <p class="definition">Временное занятие вооружёнными силами государства территории другого государства с установлением собственного управления.</p>
+            <hr>
+            <p class="example"><b>Пример:</b> Нацистская оккупация Беларуси продолжалась с 1941 по 1944 год и принесла неисчислимые страдания мирному населению.</p>
+            <div class="card-footer">
+              <span>Исторический термин</span>
+              <span class="category">Военная история</span>
+            </div>
+          </div>
 
-        <div class="dictionary-card">
-          <h3>ГЕТТО</h3>
-          <p class="phonetic">[гэ́тто] — <i>существительное, средний род</i></p>
-          <p class="definition">Изолированные районы города, создаваемые для принудительного проживания евреев в период нацистской оккупации.</p>
-          <hr>
-          <p class="example"><b>Пример:</b> В Беларуси было создано свыше 170 гетто, наиболее крупные — в Минске, Гродно и Бресте.</p>
-          <div class="card-footer">
-            <span>Исторический термин</span>
-            <span class="category">Военная история</span>
+          <div class="dictionary-card">
+            <h3>ГЕТТО</h3>
+            <p class="phonetic">[гэ́тто] — <i>существительное, средний род</i></p>
+            <p class="definition">Изолированные районы города, создаваемые для принудительного проживания евреев в период нацистской оккупации.</p>
+            <hr>
+            <p class="example"><b>Пример:</b> В Беларуси было создано свыше 170 гетто, наиболее крупные — в Минске, Гродно и Бресте.</p>
+            <div class="card-footer">
+              <span>Исторический термин</span>
+              <span class="category">Военная история</span>
+            </div>
           </div>
-        </div>
 
-        <div class="dictionary-card">
-          <h3>КАРАТЕЛЬНАЯ ОПЕРАЦИЯ</h3>
-          <p class="phonetic">[кара́тельная опера́ция] — <i>существительное, женский род</i></p>
-          <p class="definition">Военная акция, направленная на уничтожение мирного населения, партизан и уничтожение населённых пунктов.</p>
-          <hr>
-          <p class="example"><b>Пример:</b> Карательная операция "Зимнее волшебство" привела к уничтожению 439 населённых пунктов в Витебской области.</p>
-          <div class="card-footer">
-            <span>Исторический термин</span>
-            <span class="category">Военная история</span>
+          <div class="dictionary-card">
+            <h3>КАРАТЕЛЬНАЯ ОПЕРАЦИЯ</h3>
+            <p class="phonetic">[кара́тельная опера́ция] — <i>существительное, женский род</i></p>
+            <p class="definition">Военная акция, направленная на уничтожение мирного населения, партизан и уничтожение населённых пунктов.</p>
+            <hr>
+            <p class="example"><b>Пример:</b> Карательная операция "Зимнее волшебство" привела к уничтожению 439 населённых пунктов в Витебской области.</p>
+            <div class="card-footer">
+              <span>Исторический термин</span>
+              <span class="category">Военная история</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </body>
 
