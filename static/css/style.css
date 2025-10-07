@@ -589,3 +589,144 @@ em {
   aspect-ratio: 1 / 1;
   font-size: 20px;
 }
+
+/* Historical tests */
+
+.quiz-container {
+  padding: 30px;
+}
+        
+.question {
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid var(--primary-red);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+        
+.question-number {
+  font-size: 1.1rem;
+  color: var(--primary-red);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+        
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+        
+.question-options {
+  display: grid;
+  gap: 12px;
+}
+        
+.question-option {
+  padding: 12px 15px;
+  background-color: white;
+  border: 2px solid var(--light-red);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+        
+.question-option:hover {
+  background-color: var(--light-red);
+  transform: translateY(-2px);
+}
+        
+.question-option.selected {
+  background-color: var(--primary-red);
+  color: white;
+  border-color: var(--dark-red);
+ }
+        
+.question-option.correct {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+        
+.question-option.incorrect {
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+        
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+        
+button {
+  padding: 15px 40px;
+  background: linear-gradient(90deg, var(--primary-red), var(--light-red));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+        
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+        
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+        
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  display: none;
+}
+        
+.score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2575fc;
+  margin: 10px 0;
+}
+      
+.warning {
+  text-align: center;
+  color: #f44336;
+  font-weight: bold;
+  margin-top: 10px;
+  display: none;
+}
+        
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+            
+  .question-text {
+    font-size: 1.1rem;
+  }
+            
+  .option {
+    font-size: 1rem;
+  }
+            
+  button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
