@@ -22,95 +22,95 @@ body {
 }
 
 header {
-    color: var(--white);
-    background-color: var(--primary-red);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-    position: sticky;
-    top: 0;
-    padding: 15px 20px;
-    z-index: 100;
-    width: 100%;
+  color: var(--white);
+  background-color: var(--primary-red);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  padding: 15px 20px;
+  z-index: 100;
+  width: 100%;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.2;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .first-line {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .second-line {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-size: 16px;
-    display: block;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: block;
 }
 
 nav ul li a:hover {
-    background-color: var(--dark-read);
+  background-color: var(--dark-red);
 }
 
 .nav-toggle {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    justify-content: space-between;
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
 }
 
 .nav-toggle span {
-    width: 100%;
-    height: 3px;
-    background: var(--white);
-    transition: 0.3s;
-    border-radius: 2px;
+  width: 100%;
+  height: 3px;
+  background: var(--white);
+  transition: 0.3s;
+  border-radius: 2px;
 }
 
 /* animation for burger menu */
 .nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .nav-toggle.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 main {
