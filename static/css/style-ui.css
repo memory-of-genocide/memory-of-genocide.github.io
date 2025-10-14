@@ -1,12 +1,11 @@
 *{margin:0;padding:0;font-family:"Fira Sans",sans-serif}
-:root{--white:#fff;--primary-red:#c62828;--light-red:#ff5f52;--dark-red:#8e0000;--gray:#424242;--light-gray:#e0e0e0;--bg-size:cover;--bg-position:center;--bg-repeat:no-repeat;--bg-filter:blur(12px);--bg-z:-1}
+:root{--white:#fff;--primary-red:#c62828;--light-red:#ff5f52;--dark-red:#8e0000;--gray:#424242;--light-gray:#e0e0e0;--bg-size:cover;--bg-position:center;--bg-repeat:no-repeat;--bg-filter:blur(4px);--bg-z:-1}
 body{line-height:1.6;--bg-image:none}
 body::before{content:"";position:fixed;inset:0;background-image:var(--bg-image);background-size:var(--bg-size);background-position:var(--bg-position);background-repeat:var(--bg-repeat);filter:var(--bg-filter);z-index:var(--bg-z);pointer-events:none;will-change:transform,filter;transform:translateZ(0)}
 body.bg_home{--bg-image:url("../img/bg_home.webp")}
 body.bg_nuremberg_trials{--bg-image:url("../img/nuremberg_trials.webp")}
 body.bg_information{--bg-image:url("../img/bg_information.webp")}
 body.bg_information_x{--bg-image:url("../img/bg_information_x.webp")}
-body.bg_archive{--bg-image:url("../img/bg_archive.webp")}
 body.bg_video{--bg-image:url("../img/bg_video.webp")}
 body.bg_dictionary{--bg-image:url("../img/bg_dictionary.webp")}
 @media (prefers-reduced-motion:reduce){body::before{filter:none;will-change:auto}}
