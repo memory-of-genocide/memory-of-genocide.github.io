@@ -24,7 +24,7 @@ body.bg_dictionary{--bg-image:url("../img/bg_dictionary.webp")}
 .menu ul li a:hover{background-color:var(--dark-red)}
 
 .wrapper{max-width:1000px;margin:40px auto;padding:20px;border-left:4px solid #b30000;border-right:4px solid #b30000;background-color:#fffafa;box-shadow:0 0 10px rgba(179,0,0,.1)}
-.wrapper main{text-align:justify}
+.wrapper main{text-align:justify;text-indent: 20px}
 
 .wrapper main img{display:block;margin:0 auto;max-width:100%;height:auto;border-radius:10px;box-shadow:0 0 10px rgba(179,0,0,.3);transition:all .3s ease;user-select:none;-webkit-user-drag:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none}
 .wrapper main img:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 12px 30px rgba(179,0,0,.35)}
