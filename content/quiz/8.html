@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Вопросник 9</title>
+    <link rel="icon" href="../../static/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style-ui.css">
+    <script defer type="text/javascript" src="../../static/js/menu-burger.js"></script>
+
+    <style>
+      :root{
+        --accent: #5d4037;
+        --accent-dark: #3e2723;
+        --bg-light: #efebe9;
+        --paper: #ffffff;
+        --muted: #6b6b6b;
+        --success: #0f8a44;
+        --border: rgba(93,64,55,0.12);
+      }
+
+      .quiz-wrapper {
+        max-width: 980px;
+        margin: 20px auto;
+        padding: 18px;
+      }
+
+      .quiz-card {
+        background: linear-gradient(180deg, #fff, #faf5f3);
+        border: 2px solid var(--accent);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(93,64,55,0.06);
+      }
+
+      .quiz-header {
+        display:flex;
+        align-items:center;
+        gap:14px;
+        margin-bottom:12px;
+      }
+
+      .quiz-badge {
+        width:56px;
+        height:56px;
+        border-radius:10px;
+        background:var(--accent);
+        color:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        font-size:20px;
+      }
+
+      .quiz-title {
+        margin:0;
+        color:var(--accent-dark);
+        font-size:20px;
+        line-height:1.05;
+      }
+
+      .quiz-sub {
+        margin:0;
+        color:var(--muted);
+        font-size:13px;
+      }
+
+      .question {
+        background: var(--paper);
+        border:1px solid var(--border);
+        border-radius:10px;
+        padding:12px;
+        margin:12px 0;
+      }
+
+      .question strong { color:var(--accent-dark); }
+
+      .choices {
+        margin-top:8px;
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+      }
+
+      .choice {
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:10px;
+        border-radius:8px;
+        background:#fff;
+        border:1px solid transparent;
+        cursor:pointer;
+        transition: all .12s ease;
+      }
+
+      .choice:hover {
+        background:#f5efec;
+        border-color: rgba(93,64,55,0.12);
+      }
+
+      .choice input { transform:scale(1.05); }
+
+      .quiz-controls {
+        display:flex;
+        gap:12px;
+        align-items:center;
+        margin-top:14px;
+      }
+
+      .btn {
+        background:var(--accent);
+        color:#fff;
+        padding:10px 14px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:600;
+      }
+
+      .btn.secondary {
+        background:#fff;
+        color:var(--accent);
+        border:1px solid var(--accent);
+      }
+
+      #quiz-result {
+        margin-top:12px;
+        font-weight:700;
+      }
+
+      .foot-note {
+        margin-top:14px;
+        color:var(--muted);
+        font-size:13px;
+      }
+
+      .number-input {
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 14px;
+        margin-top: 8px;
+        width: 120px;
+      }
+
+      .multiple-choice {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .multiple-choice .choice {
+        margin-bottom: 4px;
+      }
+
+      @media (max-width:720px) {
+        .quiz-wrapper { padding:12px; }
+        .quiz-badge { width:48px; height:48px; font-size:18px; }
+      }
+    </style>
+</head>
+
+<body class="bg_home">
+    <header>
+        <div class="header">
+            <div class="header__info">
+                <a class="logo group" href="../../index.html">
+                <img src="../../static/img/logo.png" alt="Логотип">
+
+                <div class="logo__header">
+                    <h1>Память о геноциде белорусского народа в годы ВОВ</h1>
+                </div>
+                </a>
+
+                <button id="menu-burger-icon" class="menu-burger">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" role="img" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+                    <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
+                </svg> 
+                </button>
+            </div>
+
+            <nav class="menu">
+                <ul>
+                <li>
+                    <a href="../pages/nuremberg_trials.html">Нюрнбергский процесс</a>
+                </li>
+
+                <li>
+                    <a href="../pages/information.html">Информационные материалы</a>
+                </li>
+
+                <li>
+                    <a href="../pages/archive.html">Архивные материалы</a>
+                </li>
+
+                <li>
+                    <a href="../pagesvideo.html">Видеоматериалы</a>
+                </li>
+
+                <li>
+                    <a href="../pages/dictionary.html">Словарь</a>
+                </li>
+
+                <li>
+                    <a href="../pages/quiz.html">Вопросник</a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <h2>Расследование преступлений</h2>
+
+            <div class="quiz-wrapper">
+                <section class="quiz-card" aria-labelledby="quiz-heading">
+                    <div class="quiz-header">
+                        <div class="quiz-badge">Р</div>
+                        <div>
+                            <h3 id="quiz-heading" class="quiz-title">Расследование нацистских преступлений — Вопросник</h3>
+                            <div class="quiz-sub">10 вопросов. Изучение процесса расследования военных преступлений.</div>
+                        </div>
+                    </div>
+
+                    <div id="quiz-container">
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button id="submitBtn" class="btn">Проверить ответы</button>
+                        <button id="resetBtn" class="btn secondary">Очистить ответы</button>
+                        <div id="quiz-result" aria-live="polite"></div>
+                    </div>
+
+                    <div class="foot-note">Правосудие и установление исторической правды — важная часть сохранения памяти.</div>
+                </section>
+            </div>
+        </main>
+    </div> 
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                text: "Как назывался международный военный трибунал, судивший нацистских преступников?",
+                type: "single",
+                choices: [
+                    {id: "a", text: "Нюрнбергский процесс"},
+                    {id: "b", text: "Гаагский трибунал"},
+                    {id: "c", text: "Токийский процесс"}
+                ],
+                correct: "a"
+            },
+            {
+                id: 2,
+                text: "Сколько основных обвиняемых предстало перед Нюрнбергским трибуналом? (введите число)",
+                type: "number",
+                correct: 24
+            },
+            {
+                id: 3,
+                text: "Какие преступления рассматривались на Нюрнбергском процессе? (выберите все подходящие варианты)",
+                type: "multiple",
+                choices: [
+                    {id: "a", text: "Преступления против мира"},
+                    {id: "b", text: "Военные преступления"},
+                    {id: "c", text: "Преступления против человечности"},
+                    {id: "d", text: "Геноцид"},
+                    {id: "e", text: "Заговор с целью совершения преступлений"}
+                ],
+                correct: ["a", "b", "c", "e"]
+            },
+            {
+                id: 4,
+                text: "Какая организация занималась расследованием нацистских преступлений на территории СССР?",
+                type: "single",
+                choices: [
+                    {id: "a", text: "Чрезвычайная государственная комиссия"},
+                    {id: "b", text: "Комитет государственной безопасности"},
+                    {id: "c", text: "Народный комиссариат внутренних дел"}
+                ],
+                correct: "a"
+            },
+            {
+                id: 5,
+                text: "Какие доказательства использовались при расследовании нацистских преступлений? (выберите все подходящие варианты)",
+                type: "multiple",
+                choices: [
+                    {id: "a", text: "Показания свидетелей"},
+                    {id: "b", text: "Документы оккупационных властей"},
+                    {id: "c", text: "Фотографии и кинохроника"},
+                    {id: "d", text: "Экспертные заключения"},
+                    {id: "e", text: "Вещественные доказательства"}
+                ],
+                correct: ["a", "b", "c", "d", "e"]
+            },
+            {
+                id: 6,
+                text: "Сколько томов материалов составило дело о преступлениях в лагере смерти Тростенец? (введите приблизительное число)",
+                type: "number",
+                correct: 87
+            },
+            {
+                id: 7,
+                text: "Какие принципы международного права были закреплены Нюрнбергским процессом? (выберите все подходящие варианты)",
+                type: "multiple",
+                choices: [
+                    {id: "a", text: "Ответственность за военные преступления"},
+                    {id: "b", text: "Недопустимость ссылки на приказ начальства"},
+                    {id: "c", text: "Отсутствие срока давности для военных преступлений"},
+                    {id: "d", text: "Индивидуальная уголовная ответственность"},
+                    {id: "e", text: "Право на справедливый суд"}
+                ],
+                correct: ["a", "b", "d"]
+            },
+            {
+                id: 8,
+                text: "Кто был главным обвинителем от СССР на Нюрнбергском процессе?",
+                type: "single",
+                choices: [
+                    {id: "a", text: "Роман Руденко"},
+                    {id: "b", text: "Андрей Вышинский"},
+                    {id: "c", text: "Лев Смирнов"}
+                ],
+                correct: "a"
+            },
+            {
+                id: 9,
+                text: "Какой срок давности установлен для военных преступлений и преступлений против человечности?",
+                type: "single",
+                choices: [
+                    {id: "a", text: "Не установлен (бессрочный)"},
+                    {id: "b", text: "30 лет"},
+                    {id: "c", text: "50 лет"}
+                ],
+                correct: "a"
+            },
+            {
+                id: 10,
+                text: "Сколько нацистских преступников было осуждено в Белоруссии в послевоенные годы? (введите приблизительное число)",
+                type: "number",
+                correct: 25000
+            }
+        ];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            questions.forEach(q => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question';
+                qDiv.setAttribute('data-qid', q.id);
+                
+                let choicesHtml = '';
+                
+                if (q.type === "single") {
+                    choicesHtml = q.choices.map(c => `
+                        <label class="choice">
+                            <input type="radio" name="q${q.id}" value="${c.id}">
+                            <span>${c.text}</span>
+                        </label>
+                    `).join('');
+                } else if (q.type === "multiple") {
+                    choicesHtml = `<div class="multiple-choice">` + 
+                        q.choices.map(c => `
+                            <label class="choice">
+                                <input type="checkbox" name="q${q.id}" value="${c.id}">
+                                <span>${c.text}</span>
+                            </label>
+                        `).join('') + `</div>`;
+                } else if (q.type === "number") {
+                    choicesHtml = `<input type="number" class="number-input" name="q${q.id}" placeholder="Введите число">`;
+                }
+                
+                qDiv.innerHTML = `<div><strong>${q.text}</strong></div><div class="choices" role="${q.type === 'multiple' ? 'group' : 'radiogroup'}">${choicesHtml}</div>`;
+                container.appendChild(qDiv);
+            });
+            document.getElementById('quiz-result').textContent = '';
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            const total = questions.length;
+            
+            questions.forEach(q => {
+                const qDiv = document.querySelector(`.question[data-qid="${q.id}"]`);
+                if (!qDiv) return;
+                
+                // Сброс стилей
+                qDiv.querySelectorAll('.choice').forEach(lbl => {
+                    lbl.style.borderColor = 'transparent';
+                    lbl.style.background = '';
+                });
+                
+                let isCorrect = false;
+                
+                if (q.type === "single") {
+                    const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+                    const chosen = selected ? selected.value : null;
+                    isCorrect = chosen === q.correct;
+                    
+                    if (selected) {
+                        const chosenLabel = selected.closest('label');
+                        chosenLabel.style.borderColor = isCorrect ? 'rgba(16,128,58,0.12)' : 'rgba(93,64,55,0.12)';
+                        chosenLabel.style.background = isCorrect ? '#f3fff6' : '#f5efec';
+                    }
+                    
+                    if (!isCorrect && q.correct) {
+                        const correctLabel = qDiv.querySelector(`input[value="${q.correct}"]`).closest('label');
+                        if (correctLabel) {
+                            correctLabel.style.borderColor = 'rgba(16,128,58,0.16)';
+                            correctLabel.style.background = '#f3fff6';
+                        }
+                    }
+                } 
+                else if (q.type === "multiple") {
+                    const selected = Array.from(document.querySelectorAll(`input[name="q${q.id}"]:checked`)).map(input => input.value);
+                    const correctSet = new Set(q.correct);
+                    const selectedSet = new Set(selected);
+                    
+                    // Проверяем, совпадают ли множества
+                    isCorrect = selected.length === q.correct.length && 
+                                q.correct.every(item => selectedSet.has(item));
+                    
+                    // Подсветка выбранных ответов
+                    selected.forEach(choiceId => {
+                        const choiceLabel = qDiv.querySelector(`input[value="${choiceId}"]`).closest('label');
+                        const isChoiceCorrect = correctSet.has(choiceId);
+                        choiceLabel.style.borderColor = isChoiceCorrect ? 'rgba(16,128,58,0.12)' : 'rgba(93,64,55,0.12)';
+                        choiceLabel.style.background = isChoiceCorrect ? '#f3fff6' : '#f5efec';
+                    });
+                    
+                    // Подсветка правильных ответов, которые не были выбраны
+                    q.correct.forEach(choiceId => {
+                        if (!selectedSet.has(choiceId)) {
+                            const correctLabel = qDiv.querySelector(`input[value="${choiceId}"]`).closest('label');
+                            correctLabel.style.borderColor = 'rgba(16,128,58,0.16)';
+                            correctLabel.style.background = '#f3fff6';
+                        }
+                    });
+                }
+                else if (q.type === "number") {
+                    const input = document.querySelector(`input[name="q${q.id}"]`);
+                    const userValue = parseInt(input.value);
+                    isCorrect = userValue === q.correct;
+                    
+                    input.style.borderColor = isCorrect ? 'rgba(16,128,58,0.3)' : 'rgba(93,64,55,0.3)';
+                    input.style.background = isCorrect ? '#f3fff6' : '#f5efec';
+                }
+                
+                if (isCorrect) score++;
+            });
+            
+            const resultEl = document.getElementById('quiz-result');
+            resultEl.textContent = `Результат: ${score} из ${total}`;
+            resultEl.style.color = score === total ? 'var(--success)' : 'var(--muted)';
+        }
+
+        function resetQuiz() {
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
+            document.querySelectorAll('input[type="number"]').forEach(n => n.value = '');
+            
+            document.querySelectorAll('.choice').forEach(lbl => {
+                lbl.style.borderColor = 'transparent';
+                lbl.style.background = '';
+            });
+            
+            document.querySelectorAll('.number-input').forEach(input => {
+                input.style.borderColor = '';
+                input.style.background = '';
+            });
+            
+            document.getElementById('quiz-result').textContent = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+            document.getElementById('resetBtn').addEventListener('click', resetQuiz);
+        });
+    </script>
+</body>
+</html>
