@@ -3,6 +3,7 @@
 body{line-height:1.6;--bg-image:none}
 body::before{content:"";position:fixed;inset:0;background-image:var(--bg-image);background-size:var(--bg-size);background-position:var(--bg-position);background-repeat:var(--bg-repeat);filter:var(--bg-filter);z-index:var(--bg-z);pointer-events:none;will-change:transform,filter;transform:translateZ(0)}
 body.bg_home{--bg-image:url("../img/bg_home.webp")}
+body.nuremberg_trials{--bg-image:url("../img/nuremberg_trials.webp")}
 body.bg_information{--bg-image:url("../img/bg_information.webp")}
 body.bg_information_x{--bg-image:url("../img/bg_information_x.webp")}
 body.bg_archive{--bg-image:url("../img/bg_archive.webp")}
