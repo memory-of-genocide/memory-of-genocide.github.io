@@ -6,6 +6,7 @@ body.bg_home{--bg-image:url("../img/bg_home.webp")}
 body.bg_nuremberg_trials{--bg-image:url("../img/nuremberg_trials.webp")}
 body.bg_information{--bg-image:url("../img/bg_information.webp")}
 body.bg_information_x{--bg-image:url("../img/bg_information_x.webp")}
+body.bg_archive{--bg-image:url("../img/bg_archive.webp")}
 body.bg_video{--bg-image:url("../img/bg_video.webp")}
 body.bg_dictionary{--bg-image:url("../img/bg_dictionary.webp")}
 @media (prefers-reduced-motion:reduce){body::before{filter:none;will-change:auto}}
