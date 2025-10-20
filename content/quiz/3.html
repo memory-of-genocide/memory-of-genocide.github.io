@@ -1,172 +1,184 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Вопросник 4</title>
-    <link rel="icon" href="../../static/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style-ui.css">
-    <script defer type="text/javascript" src="../../static/js/menu-burger.js"></script>
 
-    <style>
-      :root{
-        --accent: #c8102e;
-        --accent-dark: #9b0d24;
-        --bg-light: #fff5f6;
-        --paper: #ffffff;
-        --muted: #6b6b6b;
-        --success: #0f8a44;
-        --border: rgba(200,16,46,0.12);
-      }
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Вопросник 4</title>
+  <link rel="icon" href="../../static/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../static/css/style-ui.css">
+  <script defer type="text/javascript" src="../../static/js/menu-burger.js"></script>
 
+  <style>
+    :root {
+      --accent: #c8102e;
+      --accent-dark: #9b0d24;
+      --bg-light: #fff5f6;
+      --paper: #ffffff;
+      --muted: #6b6b6b;
+      --success: #0f8a44;
+      --border: rgba(200, 16, 46, 0.12);
+    }
+
+    .quiz-wrapper {
+      max-width: 980px;
+      margin: 20px auto;
+      padding: 18px;
+    }
+
+    .quiz-card {
+      background: linear-gradient(180deg, #fff, #fff7f8);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(200, 16, 46, 0.06);
+    }
+
+    .quiz-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .quiz-title {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 20px;
+      line-height: 1.05;
+    }
+
+    .quiz-sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .question {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    .question strong {
+      color: var(--accent-dark);
+    }
+
+    .choices {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .12s ease;
+    }
+
+    .choice:hover {
+      background: #fff6f7;
+      border-color: rgba(200, 16, 46, 0.12);
+    }
+
+    .choice input {
+      transform: scale(1.05);
+    }
+
+    .quiz-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    #quiz-result {
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .foot-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .number-input {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 8px;
+      width: 120px;
+    }
+
+    .multiple-choice {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .multiple-choice .choice {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width:720px) {
       .quiz-wrapper {
-        max-width: 980px;
-        margin: 20px auto;
-        padding: 18px;
-      }
-
-      .quiz-card {
-        background: linear-gradient(180deg, #fff, #fff7f8);
-        border: 2px solid var(--accent);
-        border-radius: 12px;
-        padding: 18px;
-        box-shadow: 0 6px 18px rgba(200,16,46,0.06);
-      }
-
-      .quiz-header {
-        display:flex;
-        align-items:center;
-        gap:14px;
-        margin-bottom:12px;
+        padding: 12px;
       }
 
       .quiz-badge {
-        width:56px;
-        height:56px;
-        border-radius:10px;
-        background:var(--accent);
-        color:#fff;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-weight:700;
-        font-size:20px;
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
       }
+    }
+  </style>
+</head>
 
-      .quiz-title {
-        margin:0;
-        color:var(--accent-dark);
-        font-size:20px;
-        line-height:1.05;
-      }
-
-      .quiz-sub {
-        margin:0;
-        color:var(--muted);
-        font-size:13px;
-      }
-
-      .question {
-        background: var(--paper);
-        border:1px solid var(--border);
-        border-radius:10px;
-        padding:12px;
-        margin:12px 0;
-      }
-
-      .question strong { color:var(--accent-dark); }
-
-      .choices {
-        margin-top:8px;
-        display:flex;
-        flex-direction:column;
-        gap:8px;
-      }
-
-      .choice {
-        display:flex;
-        align-items:center;
-        gap:10px;
-        padding:10px;
-        border-radius:8px;
-        background:#fff;
-        border:1px solid transparent;
-        cursor:pointer;
-        transition: all .12s ease;
-      }
-
-      .choice:hover {
-        background:#fff6f7;
-        border-color: rgba(200,16,46,0.12);
-      }
-
-      .choice input { transform:scale(1.05); }
-
-      .quiz-controls {
-        display:flex;
-        gap:12px;
-        align-items:center;
-        margin-top:14px;
-      }
-
-      .btn {
-        background:var(--accent);
-        color:#fff;
-        padding:10px 14px;
-        border:none;
-        border-radius:10px;
-        cursor:pointer;
-        font-weight:600;
-      }
-
-      .btn.secondary {
-        background:#fff;
-        color:var(--accent);
-        border:1px solid var(--accent);
-      }
-
-      #quiz-result {
-        margin-top:12px;
-        font-weight:700;
-      }
-
-      .foot-note {
-        margin-top:14px;
-        color:var(--muted);
-        font-size:13px;
-      }
-
-      .number-input {
-        padding: 8px 12px;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        font-size: 14px;
-        margin-top: 8px;
-        width: 120px;
-      }
-
-      .multiple-choice {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .multiple-choice .choice {
-        margin-bottom: 4px;
-      }
-
-      @media (max-width:720px) {
-        .quiz-wrapper { padding:12px; }
-        .quiz-badge { width:48px; height:48px; font-size:18px; }
-      }
-    </style>
-  </head>
-
-  <body class="bg_home">
-    <header>
-      <div class="header">
-        <div class="header__info">
-          <a class="logo group" href="../../index.html">
+<body class="bg_home">
+  <header>
+    <div class="header">
+      <div class="header__info">
+        <a class="logo group" href="../../index.html">
           <img src="../../static/img/logo.png" alt="Логотип">
 
           <div class="logo__header">
@@ -175,11 +187,14 @@
         </a>
 
         <button id="menu-burger-icon" class="menu-burger">
-          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" role="img" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
-            <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
-          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" role="img" width="20"
+            height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z">
+            </path>
+          </svg>
         </button>
-        </div>
+      </div>
 
       <nav class="menu">
         <ul>
@@ -243,7 +258,7 @@
       </div>
 
     </main>
-  </div> 
+  </div>
 
   <script>
     const questions = [
@@ -252,9 +267,9 @@
         text: "Какой крупный лагерь смерти действовал на территории Белоруссии в годы оккупации?",
         type: "single",
         choices: [
-          {id: "a", text: "Тростенец"},
-          {id: "b", text: "Освенцим"},
-          {id: "c", text: "Дахау"}
+          { id: "a", text: "Тростенец" },
+          { id: "b", text: "Освенцим" },
+          { id: "c", text: "Дахау" }
         ],
         correct: "a"
       },
@@ -269,11 +284,11 @@
         text: "Какие категории людей содержались в лагерях смерти на территории Белоруссии? (выберите все подходящие варианты)",
         type: "multiple",
         choices: [
-          {id: "a", text: "Евреи"},
-          {id: "b", text: "Партизаны"},
-          {id: "c", text: "Мирные жители"},
-          {id: "d", text: "Военнопленные"},
-          {id: "e", text: "Политические заключенные"}
+          { id: "a", text: "Евреи" },
+          { id: "b", text: "Партизаны" },
+          { id: "c", text: "Мирные жители" },
+          { id: "d", text: "Военнопленные" },
+          { id: "e", text: "Политические заключенные" }
         ],
         correct: ["a", "b", "c", "d", "e"]
       },
@@ -282,9 +297,9 @@
         text: "Что представлял собой лагерь «Озаричи»?",
         type: "single",
         choices: [
-          {id: "a", text: "Лагерь для зараженных тифом мирных жителей"},
-          {id: "b", text: "Лагерь для военнопленных офицеров"},
-          {id: "c", text: "Пересыльный лагерь"}
+          { id: "a", text: "Лагерь для зараженных тифом мирных жителей" },
+          { id: "b", text: "Лагерь для военнопленных офицеров" },
+          { id: "c", text: "Пересыльный лагерь" }
         ],
         correct: "a"
       },
@@ -293,11 +308,11 @@
         text: "Какие методы уничтожения применялись в лагерях смерти? (выберите все подходящие варианты)",
         type: "multiple",
         choices: [
-          {id: "a", text: "Расстрелы"},
-          {id: "b", text: "Газовые камеры"},
-          {id: "c", text: "Голод и болезни"},
-          {id: "d", text: "Медицинские эксперименты"},
-          {id: "e", text: "Изнурительный труд"}
+          { id: "a", text: "Расстрелы" },
+          { id: "b", text: "Газовые камеры" },
+          { id: "c", text: "Голод и болезни" },
+          { id: "d", text: "Медицинские эксперименты" },
+          { id: "e", text: "Изнурительный труд" }
         ],
         correct: ["a", "b", "c", "d", "e"]
       },
@@ -312,10 +327,10 @@
         text: "Какие организации отвечали за создание и управление лагерями смерти? (выберите все подходящие варианты)",
         type: "multiple",
         choices: [
-          {id: "a", text: "СС"},
-          {id: "b", text: "СД"},
-          {id: "c", text: "Гестапо"},
-          {id: "e", text: "Вермахт"}
+          { id: "a", text: "СС" },
+          { id: "b", text: "СД" },
+          { id: "c", text: "Гестапо" },
+          { id: "e", text: "Вермахт" }
         ],
         correct: ["a", "b", "c"]
       },
@@ -324,9 +339,9 @@
         text: "Что происходило с узниками, которые не могли работать?",
         type: "single",
         choices: [
-          {id: "a", text: "Их уничтожали в первую очередь"},
-          {id: "b", text: "Отправляли в госпитали"},
-          {id: "c", text: "Освобождали"}
+          { id: "a", text: "Их уничтожали в первую очередь" },
+          { id: "b", text: "Отправляли в госпитали" },
+          { id: "c", text: "Освобождали" }
         ],
         correct: "a"
       },
@@ -335,9 +350,9 @@
         text: "Какой лагерь называли «фабрикой смерти» на территории Белоруссии?",
         type: "single",
         choices: [
-          {id: "a", text: "Тростенец"},
-          {id: "b", text: "Брестскую крепость"},
-          {id: "c", text: "Минское гетто"}
+          { id: "a", text: "Тростенец" },
+          { id: "b", text: "Брестскую крепость" },
+          { id: "c", text: "Минское гетто" }
         ],
         correct: "a"
       },
@@ -356,9 +371,9 @@
         const qDiv = document.createElement('div');
         qDiv.className = 'question';
         qDiv.setAttribute('data-qid', q.id);
-        
+
         let choicesHtml = '';
-        
+
         if (q.type === "single") {
           choicesHtml = q.choices.map(c => `
             <label class="choice">
@@ -367,7 +382,7 @@
             </label>
           `).join('');
         } else if (q.type === "multiple") {
-          choicesHtml = `<div class="multiple-choice">` + 
+          choicesHtml = `<div class="multiple-choice">` +
             q.choices.map(c => `
               <label class="choice">
                 <input type="checkbox" name="q${q.id}" value="${c.id}">
@@ -377,7 +392,7 @@
         } else if (q.type === "number") {
           choicesHtml = `<input type="number" class="number-input" name="q${q.id}" placeholder="Введите число">`;
         }
-        
+
         qDiv.innerHTML = `<div><strong>${q.text}</strong></div><div class="choices" role="${q.type === 'multiple' ? 'group' : 'radiogroup'}">${choicesHtml}</div>`;
         container.appendChild(qDiv);
       });
@@ -387,30 +402,30 @@
     function checkAnswers() {
       let score = 0;
       const total = questions.length;
-      
+
       questions.forEach(q => {
         const qDiv = document.querySelector(`.question[data-qid="${q.id}"]`);
         if (!qDiv) return;
-        
+
         // Сброс стилей
         qDiv.querySelectorAll('.choice').forEach(lbl => {
           lbl.style.borderColor = 'transparent';
           lbl.style.background = '';
         });
-        
+
         let isCorrect = false;
-        
+
         if (q.type === "single") {
           const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
           const chosen = selected ? selected.value : null;
           isCorrect = chosen === q.correct;
-          
+
           if (selected) {
             const chosenLabel = selected.closest('label');
             chosenLabel.style.borderColor = isCorrect ? 'rgba(16,128,58,0.12)' : 'rgba(200,16,46,0.12)';
             chosenLabel.style.background = isCorrect ? '#f3fff6' : '#fff6f7';
           }
-          
+
           if (!isCorrect && q.correct) {
             const correctLabel = qDiv.querySelector(`input[value="${q.correct}"]`).closest('label');
             if (correctLabel) {
@@ -418,16 +433,16 @@
               correctLabel.style.background = '#f3fff6';
             }
           }
-        } 
+        }
         else if (q.type === "multiple") {
           const selected = Array.from(document.querySelectorAll(`input[name="q${q.id}"]:checked`)).map(input => input.value);
           const correctSet = new Set(q.correct);
           const selectedSet = new Set(selected);
-          
+
           // Проверяем, совпадают ли множества
-          isCorrect = selected.length === q.correct.length && 
-                     q.correct.every(item => selectedSet.has(item));
-          
+          isCorrect = selected.length === q.correct.length &&
+            q.correct.every(item => selectedSet.has(item));
+
           // Подсветка выбранных ответов
           selected.forEach(choiceId => {
             const choiceLabel = qDiv.querySelector(`input[value="${choiceId}"]`).closest('label');
@@ -435,7 +450,7 @@
             choiceLabel.style.borderColor = isChoiceCorrect ? 'rgba(16,128,58,0.12)' : 'rgba(200,16,46,0.12)';
             choiceLabel.style.background = isChoiceCorrect ? '#f3fff6' : '#fff6f7';
           });
-          
+
           // Подсветка правильных ответов, которые не были выбраны
           q.correct.forEach(choiceId => {
             if (!selectedSet.has(choiceId)) {
@@ -449,14 +464,14 @@
           const input = document.querySelector(`input[name="q${q.id}"]`);
           const userValue = parseInt(input.value);
           isCorrect = userValue === q.correct;
-          
+
           input.style.borderColor = isCorrect ? 'rgba(16,128,58,0.3)' : 'rgba(200,16,46,0.3)';
           input.style.background = isCorrect ? '#f3fff6' : '#fff6f7';
         }
-        
+
         if (isCorrect) score++;
       });
-      
+
       const resultEl = document.getElementById('quiz-result');
       resultEl.textContent = `Результат: ${score} из ${total}`;
       resultEl.style.color = score === total ? 'var(--success)' : 'var(--muted)';
@@ -466,17 +481,17 @@
       document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
       document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
       document.querySelectorAll('input[type="number"]').forEach(n => n.value = '');
-      
+
       document.querySelectorAll('.choice').forEach(lbl => {
         lbl.style.borderColor = 'transparent';
         lbl.style.background = '';
       });
-      
+
       document.querySelectorAll('.number-input').forEach(input => {
         input.style.borderColor = '';
         input.style.background = '';
       });
-      
+
       document.getElementById('quiz-result').textContent = '';
     }
 
@@ -487,4 +502,5 @@
     });
   </script>
 </body>
+
 </html>

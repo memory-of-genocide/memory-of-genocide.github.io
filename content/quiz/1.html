@@ -1,152 +1,164 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Вопросник 2</title>
-    <link rel="icon" href="../../static/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style-ui.css">
-    <script defer type="text/javascript" src="../../static/js/menu-burger.js"></script>
-    <style>
-      :root{
-        --accent: #c8102e;
-        --accent-dark: #9b0d24;
-        --bg-light: #fff5f6;
-        --paper: #ffffff;
-        --muted: #6b6b6b;
-        --success: #0f8a44;
-        --border: rgba(200,16,46,0.12);
-      }
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Вопросник 2</title>
+  <link rel="icon" href="../../static/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../static/css/style-ui.css">
+  <script defer type="text/javascript" src="../../static/js/menu-burger.js"></script>
+  <style>
+    :root {
+      --accent: #c8102e;
+      --accent-dark: #9b0d24;
+      --bg-light: #fff5f6;
+      --paper: #ffffff;
+      --muted: #6b6b6b;
+      --success: #0f8a44;
+      --border: rgba(200, 16, 46, 0.12);
+    }
+
+    .quiz-wrapper {
+      max-width: 980px;
+      margin: 20px auto;
+      padding: 18px;
+    }
+
+    .quiz-card {
+      background: linear-gradient(180deg, #fff, #fff7f8);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(200, 16, 46, 0.06);
+    }
+
+    .quiz-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .quiz-title {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 20px;
+      line-height: 1.05;
+    }
+
+    .quiz-sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .question {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    .question strong {
+      color: var(--accent-dark);
+    }
+
+    .choices {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .12s ease;
+    }
+
+    .choice:hover {
+      background: #fff6f7;
+      border-color: rgba(200, 16, 46, 0.12);
+    }
+
+    .choice input {
+      transform: scale(1.05);
+    }
+
+    .quiz-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    #quiz-result {
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .foot-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width:720px) {
       .quiz-wrapper {
-        max-width: 980px;
-        margin: 20px auto;
-        padding: 18px;
-      }
-
-      .quiz-card {
-        background: linear-gradient(180deg, #fff, #fff7f8);
-        border: 2px solid var(--accent);
-        border-radius: 12px;
-        padding: 18px;
-        box-shadow: 0 6px 18px rgba(200,16,46,0.06);
-      }
-
-      .quiz-header {
-        display:flex;
-        align-items:center;
-        gap:14px;
-        margin-bottom:12px;
+        padding: 12px;
       }
 
       .quiz-badge {
-        width:56px;
-        height:56px;
-        border-radius:10px;
-        background:var(--accent);
-        color:#fff;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-weight:700;
-        font-size:20px;
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
       }
+    }
+  </style>
+</head>
 
-      .quiz-title {
-        margin:0;
-        color:var(--accent-dark);
-        font-size:20px;
-        line-height:1.05;
-      }
-
-      .quiz-sub {
-        margin:0;
-        color:var(--muted);
-        font-size:13px;
-      }
-
-      .question {
-        background: var(--paper);
-        border:1px solid var(--border);
-        border-radius:10px;
-        padding:12px;
-        margin:12px 0;
-      }
-
-      .question strong { color:var(--accent-dark); }
-
-      .choices {
-        margin-top:8px;
-        display:flex;
-        flex-direction:column;
-        gap:8px;
-      }
-
-      .choice {
-        display:flex;
-        align-items:center;
-        gap:10px;
-        padding:10px;
-        border-radius:8px;
-        background:#fff;
-        border:1px solid transparent;
-        cursor:pointer;
-        transition: all .12s ease;
-      }
-
-      .choice:hover {
-        background:#fff6f7;
-        border-color: rgba(200,16,46,0.12);
-      }
-
-      .choice input { transform:scale(1.05); }
-
-      .quiz-controls {
-        display:flex;
-        gap:12px;
-        align-items:center;
-        margin-top:14px;
-      }
-
-      .btn {
-        background:var(--accent);
-        color:#fff;
-        padding:10px 14px;
-        border:none;
-        border-radius:10px;
-        cursor:pointer;
-        font-weight:600;
-      }
-
-      .btn.secondary {
-        background:#fff;
-        color:var(--accent);
-        border:1px solid var(--accent);
-      }
-
-      #quiz-result {
-        margin-top:12px;
-        font-weight:700;
-      }
-
-      .foot-note {
-        margin-top:14px;
-        color:var(--muted);
-        font-size:13px;
-      }
-
-      @media (max-width:720px) {
-        .quiz-wrapper { padding:12px; }
-        .quiz-badge { width:48px; height:48px; font-size:18px; }
-      }
-    </style>
-  </head>
-
-  <body class="bg_home">
-    <header>
-      <div class="header">
-        <div class="header__info">
-          <a class="logo group" href="../../index.html">
+<body class="bg_home">
+  <header>
+    <div class="header">
+      <div class="header__info">
+        <a class="logo group" href="../../index.html">
           <img src="../../static/img/logo.png" alt="Логотип">
 
           <div class="logo__header">
@@ -155,11 +167,14 @@
         </a>
 
         <button id="menu-burger-icon" class="menu-burger">
-          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" role="img" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
-            <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
-          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" role="img" width="20"
+            height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z">
+            </path>
+          </svg>
         </button>
-        </div>
+      </div>
 
       <nav class="menu">
         <ul>
@@ -218,7 +233,7 @@
             <div id="quiz-result" aria-live="polite"></div>
           </div>
     </main>
-  </div> 
+  </div>
 
   <script>
     const questions = [
@@ -226,9 +241,9 @@
         id: 1,
         text: "В какие годы в основном происходила оккупация большей части территории Белоруссии во время Великой Отечественной войны?",
         choices: [
-          {id: "a", text: "1939–1941"},
-          {id: "b", text: "1941–1944"},
-          {id: "c", text: "1944–1945"}
+          { id: "a", text: "1939–1941" },
+          { id: "b", text: "1941–1944" },
+          { id: "c", text: "1944–1945" }
         ],
         correct: "b"
       },
@@ -236,9 +251,9 @@
         id: 2,
         text: "Как называется белорусская деревня, полностью уничтоженная оккупантами в 1943 году и ставшая символом страданий мирного населения?",
         choices: [
-          {id: "a", text: "Хатынь"},
-          {id: "b", text: "Бобруйск"},
-          {id: "c", text: "Минск"}
+          { id: "a", text: "Хатынь" },
+          { id: "b", text: "Бобруйск" },
+          { id: "c", text: "Минск" }
         ],
         correct: "a"
       },
@@ -246,9 +261,9 @@
         id: 3,
         text: "Какие формы насилия применялись против мирного населения Белоруссии в годы оккупации?",
         choices: [
-          {id: "a", text: "Массовые убийства и сожжение деревень"},
-          {id: "b", text: "Только денежные штрафы"},
-          {id: "c", text: "Исключительно изъятие имущества"}
+          { id: "a", text: "Массовые убийства и сожжение деревень" },
+          { id: "b", text: "Только денежные штрафы" },
+          { id: "c", text: "Исключительно изъятие имущества" }
         ],
         correct: "a"
       },
@@ -256,9 +271,9 @@
         id: 4,
         text: "Кого в особенности преследовали и уничтожали на оккупированной территории Белоруссии помимо мирных граждан?",
         choices: [
-          {id: "a", text: "Партизан и подозреваемых в поддержке подполья"},
-          {id: "b", text: "Иностранных туристов"},
-          {id: "c", text: "Только административных чиновников"}
+          { id: "a", text: "Партизан и подозреваемых в поддержке подполья" },
+          { id: "b", text: "Иностранных туристов" },
+          { id: "c", text: "Только административных чиновников" }
         ],
         correct: "a"
       },
@@ -266,9 +281,9 @@
         id: 5,
         text: "Какой подход наиболее правильный при изучении этой трагической темы на образовательных ресурсах?",
         choices: [
-          {id: "a", text: "Основываться на документальных источниках, свидетельствах и исследованиях"},
-          {id: "b", text: "Игнорировать исторические данные"},
-          {id: "c", text: "Опираясь только на устные слухи"}
+          { id: "a", text: "Основываться на документальных источниках, свидетельствах и исследованиях" },
+          { id: "b", text: "Игнорировать исторические данные" },
+          { id: "c", text: "Опираясь только на устные слухи" }
         ],
         correct: "a"
       }
@@ -342,4 +357,5 @@
     });
   </script>
 </body>
+
 </html>
